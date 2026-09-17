@@ -46,11 +46,13 @@ const services=[
  ['BA01','基本身體清潔',260],['BA02','基本日常照顧',195],['BA03','測量生命徵象',35],['BA04','協助餵食或灌食',130],['BA05','餐食照顧',310],['BA07','協助淋浴及洗頭',325],['BA08','足部照護',500],['BA10','翻身拍背',155],['BA11','肢體關節運動',195],['BA12','協助上下樓梯',130],['BA13','陪同外出',195],['BA14','陪同就醫',685],['BA15-1','家務協助',195],['BA15-2','家務協助(家屬同住)',195],['BA16-1','代購/領/送服務',130],['BA16-2','代購/領/送(家屬同住)',130],['BA17a','人工氣道抽吸',75],['BA17b','口腔分泌物抽吸',65],['BA17c','管路清潔固定',50],['BA17d1','血糖機驗血',50],['BA17d2','甘油球通便',50],['BA17e','依指示置入藥盒',50],['BA18','安全看視',200],['BA20','陪伴服務',175],['BA22','巡視服務',130],['BA23','協助洗頭',200],['BA24','協助排泄',220],['GA09','居家喘息服務',770],['SC09','居家短照服務',770],['自費','小時計',400],['未遇','服務未遇',200]
 ];
 const grid=document.querySelector('#grid');
-let state=JSON.parse(localStorage.getItem('lihsin-split-v1')||'null')||{ratio:60,rows:[{name:'',q:Array(services.length).fill(0)}]};
+let state=null;
+try{state=JSON.parse(localStorage.getItem('lihsin-split-v1')||'null')}catch(e){state=null}
+state=state||{ratio:60,rows:[{name:'',q:Array(services.length).fill(0)}]};
 if(!Array.isArray(state.rows)||!state.rows.length)state.rows=[{name:'',q:Array(services.length).fill(0)}];
 state.rows.forEach(r=>{r.q=Array.from({length:services.length},(_,i)=>Number(r.q?.[i])||0)});
 const money=n=>'$'+Math.round(n).toLocaleString('zh-TW');
-function save(){localStorage.setItem('lihsin-split-v1',JSON.stringify(state))}
+function save(){try{localStorage.setItem('lihsin-split-v1',JSON.stringify(state))}catch(e){}}
 function calc(r){return r.q.reduce((s,n,i)=>s+n*services[i][2],0)}
 const isPhonePortrait=()=>window.matchMedia('(max-width:720px) and (orientation:portrait)').matches;
 function renderMobile(){
@@ -82,7 +84,8 @@ function renderDesktop(){
   const dc=document.createElement('div');dc.className='cell';const db=document.createElement('button');db.className='delete';db.textContent='×';db.title='刪除此個案';db.onclick=()=>{if(state.rows.length===1){state.rows[0]={name:'',q:Array(services.length).fill(0)}}else state.rows.splice(ri,1);save();render()};dc.append(db);grid.append(dc);
  });updateTotals();
 }
-function render(){isPhonePortrait()?renderMobile():renderDesktop()}
+let currentLayout='';
+function render(){currentLayout=isPhonePortrait()?'mobile':'desktop';currentLayout==='mobile'?renderMobile():renderDesktop()}
 function updateTotals(){let amount=0,qty=0;state.rows.forEach((r,i)=>{const a=calc(r);amount+=a;qty+=r.q.reduce((x,y)=>x+y,0);['amount','mobile-amount'].forEach(k=>{const el=document.querySelector(`[data-${k}${i}]`);if(el)el.textContent=money(a)});['income','mobile-income'].forEach(k=>{const el=document.querySelector(`[data-${k}${i}]`);if(el)el.textContent=money(a*(Number(state.ratio)||0)/100)})});document.querySelector('#caseTotal').textContent=`${state.rows.filter(r=>r.name.trim()||r.q.some(Boolean)).length} 位`;document.querySelector('#qtyTotal').textContent=qty.toLocaleString('zh-TW');document.querySelector('#amountTotal').textContent=money(amount);document.querySelector('#incomeTotal').textContent=money(amount*(Number(state.ratio)||0)/100)}
 document.querySelector('#ratio').value=state.ratio;document.querySelector('#ratio').addEventListener('input',e=>{state.ratio=Math.min(100,Math.max(0,Number(e.target.value)||0));save();updateTotals()});
 document.querySelector('#add').onclick=()=>{state.rows.push({name:'',q:Array(services.length).fill(0)});save();render();setTimeout(()=>{const s=document.querySelector('.scroller');if(isPhonePortrait())s.scrollLeft=s.scrollWidth;else s.scrollTop=s.scrollHeight},0)};
@@ -110,7 +113,7 @@ clearButton.addEventListener('click',()=>{
  clearButton.classList.remove('confirming');
 });
 render();
-let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(render,180)});
+let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const nextLayout=isPhonePortrait()?'mobile':'desktop';if(nextLayout!==currentLayout)render()},220)});
 </script>
 </body>
 </html>
