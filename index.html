@@ -9,14 +9,14 @@
     :root{--ink:#403734;--muted:#857873;--cream:#fbf7f2;--paper:#fffdfa;--line:#eadfd7;--brand:#8f5e4d;--brand2:#b8856d;--sage:#83947e;--shadow:0 14px 36px rgba(82,58,48,.10)}
     *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;color:var(--ink);background:linear-gradient(160deg,#f6eee6 0,#fcfaf6 40%,#eef2eb 100%);min-height:100vh}
     button,input{font:inherit} button{cursor:pointer}.wrap{max-width:1480px;margin:auto;padding:28px 22px 70px}
-    header{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:20px}.eyebrow{color:var(--brand);font-weight:800;letter-spacing:.16em;font-size:13px}.title{margin:5px 0 4px;font-size:clamp(27px,4vw,42px);letter-spacing:-.04em}.subtitle{margin:0;color:var(--muted)}
+    header{margin-bottom:14px}.eyebrow{color:var(--brand);font-weight:800;letter-spacing:.16em;font-size:13px}.title{margin:5px 0 4px;font-size:clamp(27px,4vw,42px);letter-spacing:-.04em}.subtitle{margin:0;color:var(--muted)}
     .ratio-card{background:rgba(255,253,250,.88);border:1px solid rgba(234,223,215,.9);border-radius:22px;padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;white-space:nowrap}.ratio-card label{font-weight:750}.ratio-wrap{display:flex;align-items:center;background:#f6eee7;border-radius:12px;padding:0 10px}.ratio-wrap input{width:70px;border:0;background:transparent;padding:10px 4px;text-align:right;font-size:19px;font-weight:800;color:var(--brand);outline:0}
-    .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}.btn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:13px;padding:10px 15px;font-weight:750;box-shadow:0 4px 12px rgba(82,58,48,.05)}.btn.primary{background:var(--brand);border-color:var(--brand);color:white}.btn.confirming{background:#a44f49;border-color:#a44f49;color:white}.btn:hover{transform:translateY(-1px)}
+    .controls{display:flex;align-items:center;gap:10px;margin-bottom:12px}.toolbar{display:flex;gap:10px}.btn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:13px;padding:10px 15px;font-weight:750;box-shadow:0 4px 12px rgba(82,58,48,.05);white-space:nowrap}.btn.primary{background:var(--brand);border-color:var(--brand);color:white}.btn.confirming{background:#a44f49;border-color:#a44f49;color:white}.btn:hover{transform:translateY(-1px)}
     .hint{display:flex;align-items:center;gap:9px;margin:2px 2px 14px;color:var(--muted);font-size:13px}.dot{width:8px;height:8px;border-radius:50%;background:var(--sage)}
-    .sheet{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.scroller{overflow:auto;max-height:65vh}.grid{display:grid;grid-template-columns:48px 160px repeat(29,126px) 118px 118px 56px;min-width:max-content}.cell{min-height:62px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:9px;display:flex;align-items:center;justify-content:center;background:var(--paper)}.head{position:sticky;top:0;z-index:4;background:#f1e7de;min-height:108px;flex-direction:column;text-align:center;font-weight:800;font-size:13px;line-height:1.35}.head small{display:block;font-weight:650;color:var(--ink);margin-top:5px;max-width:112px;white-space:normal}.head small.price{font-weight:700;color:var(--brand);margin-top:4px}.sticky-no{position:sticky;left:0;z-index:3;background:#fbf5ef}.sticky-name{position:sticky;left:48px;z-index:3;background:#fffdfa;box-shadow:7px 0 14px rgba(80,55,45,.05)}.head.sticky-no,.head.sticky-name{z-index:6;background:#eadbd0}.name-input,.qty{width:100%;border:1px solid transparent;border-radius:10px;background:#f8f3ee;outline:0}.name-input{padding:11px 9px}.qty{text-align:center;padding:9px 2px;min-width:52px}.name-input:focus,.qty:focus{border-color:var(--brand2);background:white;box-shadow:0 0 0 3px rgba(184,133,109,.14)}.money{font-weight:850;color:var(--brand);font-variant-numeric:tabular-nums}.income{color:#5f775d}.delete{border:0;background:transparent;color:#b7aaa4;font-size:20px}.delete:hover{color:#a04444}.empty{color:#c8bbb5}
+    .sheet{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.scroller{overflow:auto;max-height:68vh}.grid{display:grid;min-width:max-content}.cell{min-height:62px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:9px;display:flex;align-items:center;justify-content:center;background:var(--paper)}.head{position:sticky;top:0;z-index:4;background:#f1e7de;min-height:106px;flex-direction:column;text-align:center;font-weight:800;font-size:13px;line-height:1.35}.corner{position:sticky;left:0;z-index:7;background:#eadbd0;box-shadow:7px 0 14px rgba(80,55,45,.06)}.service-cell{position:sticky;left:0;z-index:3;background:#fbf5ef;justify-content:flex-start;text-align:left;box-shadow:7px 0 14px rgba(80,55,45,.05)}.service-info{display:grid;grid-template-columns:58px 1fr;gap:2px 9px;width:100%;align-items:center}.service-code{grid-row:1/3;font-weight:850;color:var(--brand)}.service-name{font-weight:700;line-height:1.3}.service-price{font-size:12px;color:var(--muted)}.client-sums{width:100%;margin-top:5px;padding-top:5px;border-top:1px solid rgba(143,94,77,.2);font-size:10px;color:var(--muted);line-height:1.5}.client-sums b{display:block;color:var(--brand);font-size:12px}.client-sums .income{color:#5f775d}.name-input,.qty{width:100%;border:1px solid transparent;border-radius:10px;background:#f8f3ee;outline:0}.name-input{padding:9px 7px;text-align:center;font-weight:750}.qty{text-align:center;padding:9px 2px;min-width:52px}.name-input:focus,.qty:focus{border-color:var(--brand2);background:white;box-shadow:0 0 0 3px rgba(184,133,109,.14)}.money{font-weight:850;color:var(--brand);font-variant-numeric:tabular-nums}.income{color:#5f775d}.delete{border:0;background:transparent;color:#a99891;font-size:12px;margin-top:4px}.delete:hover{color:#a04444}.desktop-sticky-no{position:sticky;left:0;z-index:3;background:#fbf5ef}.desktop-sticky-name{position:sticky;left:48px;z-index:3;background:#fffdfa;box-shadow:7px 0 14px rgba(80,55,45,.05)}.head.desktop-sticky-no,.head.desktop-sticky-name{z-index:6;background:#eadbd0}.desktop-head small{display:block;font-weight:650;color:var(--ink);margin-top:5px;max-width:112px}.desktop-head small.price{color:var(--brand)}
     .totals{display:grid;grid-template-columns:1fr repeat(3,minmax(150px,220px));gap:1px;background:var(--line);border-top:1px solid var(--line)}.total-box{background:#f8f1eb;padding:18px 22px}.total-box:first-child{background:#efe4db}.total-box span{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}.total-box strong{font-size:22px;color:var(--brand);font-variant-numeric:tabular-nums}.total-box.income-total strong{color:#5f775d}
     .foot{margin:14px 4px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:12px}.mobile-note{display:none}
-    @media(max-width:720px){.wrap{padding:20px 12px 50px}header{align-items:stretch;flex-direction:column}.ratio-card{justify-content:space-between}.sheet{border-radius:18px}.scroller{max-height:62vh}.grid{grid-template-columns:42px 132px repeat(29,116px) 108px 108px 52px}.sticky-name{left:42px}.cell{padding:6px;min-height:58px}.head{min-height:104px;font-size:12px}.head small{max-width:104px}.totals{grid-template-columns:1fr 1fr}.total-box:first-child{grid-column:1/-1}.total-box{padding:14px}.total-box strong{font-size:18px}.mobile-note{display:block}.foot{flex-direction:column}}
+    @media(max-width:720px) and (orientation:portrait){html,body{height:100%;overflow:hidden}.wrap{height:100dvh;padding:8px 8px 0;display:flex;flex-direction:column;overflow:hidden}header{margin:0 2px 6px}.eyebrow,.subtitle{display:none}.title{font-size:18px;margin:0;white-space:nowrap}.controls{gap:5px;margin-bottom:6px}.ratio-card{border-radius:10px;padding:4px 7px;gap:4px;box-shadow:none}.ratio-card label{font-size:11px}.ratio-wrap{padding:0 4px;border-radius:7px}.ratio-wrap input{width:42px;padding:5px 2px;font-size:15px}.toolbar{gap:5px}.btn{padding:7px 9px;border-radius:9px;font-size:12px;box-shadow:none}.hint,.foot{display:none}.sheet{flex:1;min-height:0;border-radius:14px;display:flex;flex-direction:column}.scroller{flex:1;min-height:0;max-height:none;overflow:auto;overscroll-behavior:contain}.cell{padding:5px;min-height:54px}.head{min-height:132px;font-size:11px}.service-info{grid-template-columns:51px 1fr;gap:2px 5px}.service-name{font-size:11px}.service-price{font-size:10px}.totals{flex:none;grid-template-columns:repeat(4,1fr);position:relative;bottom:0}.total-box,.total-box:first-child{grid-column:auto;padding:7px 4px;text-align:center}.total-box span{font-size:9px;margin-bottom:2px;white-space:nowrap}.total-box strong{font-size:13px}.mobile-note{display:none}}
     @media print{body{background:white}.wrap{max-width:none;padding:0}.toolbar,.hint,.foot{display:none}.sheet{box-shadow:none}.scroller{max-height:none;overflow:visible}.grid{transform-origin:top left}.head{position:static}.sticky-no,.sticky-name{position:static;box-shadow:none}}
   </style>
 </head>
@@ -24,10 +24,12 @@
 <main class="wrap">
   <header>
     <div><div class="eyebrow">LIHSIN HOME CARE</div><h1 class="title">立心居家｜拆帳試算小工具</h1><p class="subtitle">輸入每位個案的服務次數，即時計算申報金額與拆帳所得。</p></div>
-    <div class="ratio-card"><label for="ratio">拆帳比例</label><div class="ratio-wrap"><input id="ratio" type="number" min="0" max="100" step="0.1" value="60"><b>%</b></div></div>
   </header>
-  <div class="toolbar"><button class="btn primary" id="add">＋ 新增個案</button><button class="btn" id="clear">清除全部</button></div>
-  <div class="hint"><i class="dot"></i><span>資料會自動保存在這台裝置；手機可左右滑動查看所有碼別。</span></div>
+  <div class="controls">
+    <div class="ratio-card"><label for="ratio">拆帳比例</label><div class="ratio-wrap"><input id="ratio" type="number" min="0" max="100" step="0.1" value="60"><b>%</b></div></div>
+    <div class="toolbar"><button class="btn primary" id="add">＋ 新增個案</button><button class="btn" id="clear">清除全部</button></div>
+  </div>
+  <div class="hint"><i class="dot"></i><span>服務項目直向排列；新增個案會往右增加，手機可左右滑動切換個案。</span></div>
   <section class="sheet">
     <div class="scroller"><div id="grid" class="grid"></div></div>
     <div class="totals">
@@ -37,36 +39,53 @@
       <div class="total-box income-total"><span>拆帳所得加總</span><strong id="incomeTotal">$0</strong></div>
     </div>
   </section>
-  <div class="foot"><span>＊此工具為自行試算用途，實際金額仍以單位核算結果為準。</span><span class="mobile-note">提示：前兩欄會固定，方便對照個案。</span></div>
+  <div class="foot"><span>＊此工具為自行試算用途，實際金額仍以單位核算結果為準。</span><span class="mobile-note">提示：左側服務項目會固定，往右滑即可查看其他個案。</span></div>
 </main>
 <script>
 const services=[
  ['BA01','基本身體清潔',260],['BA02','基本日常照顧',195],['BA03','測量生命徵象',35],['BA04','協助餵食或灌食',130],['BA05','餐食照顧',310],['BA07','協助淋浴及洗頭',325],['BA08','足部照護',500],['BA10','翻身拍背',155],['BA11','肢體關節運動',195],['BA12','協助上下樓梯',130],['BA13','陪同外出',195],['BA14','陪同就醫',685],['BA15-1','家務協助',195],['BA15-2','家務協助(家屬同住)',195],['BA16-1','代購/領/送服務',130],['BA16-2','代購/領/送(家屬同住)',130],['BA17a','人工氣道抽吸',75],['BA17b','口腔分泌物抽吸',65],['BA17c','管路清潔固定',50],['BA17d1','血糖機驗血',50],['BA17d2','甘油球通便',50],['BA17e','依指示置入藥盒',50],['BA18','安全看視',200],['BA20','陪伴服務',175],['BA22','巡視服務',130],['BA23','協助洗頭',200],['BA24','協助排泄',220],['GA09','居家喘息服務',770],['SC09','居家短照服務',770],['自費','小時計',400],['未遇','服務未遇',200]
 ];
-// Grid CSS count follows the service list; set it dynamically to prevent future mismatches.
-const grid=document.querySelector('#grid');grid.style.gridTemplateColumns=`48px 160px repeat(${services.length},126px) 118px 118px 56px`;
+const grid=document.querySelector('#grid');
 let state=JSON.parse(localStorage.getItem('lihsin-split-v1')||'null')||{ratio:60,rows:[{name:'',q:Array(services.length).fill(0)}]};
 if(!Array.isArray(state.rows)||!state.rows.length)state.rows=[{name:'',q:Array(services.length).fill(0)}];
 state.rows.forEach(r=>{r.q=Array.from({length:services.length},(_,i)=>Number(r.q?.[i])||0)});
 const money=n=>'$'+Math.round(n).toLocaleString('zh-TW');
 function save(){localStorage.setItem('lihsin-split-v1',JSON.stringify(state))}
 function calc(r){return r.q.reduce((s,n,i)=>s+n*services[i][2],0)}
-function render(){
+const isPhonePortrait=()=>window.matchMedia('(max-width:720px) and (orientation:portrait)').matches;
+function renderMobile(){
  grid.innerHTML='';
- const heads=[['#','',''],['個案姓名','',''],...services.map(s=>[s[0],s[1],`${s[2]}元`]),['申報金額','',''],['拆帳所得','',''],['','','']];
- heads.forEach((h,i)=>{const d=document.createElement('div');d.className='cell head'+(i===0?' sticky-no':i===1?' sticky-name':'');d.innerHTML=`<span>${h[0]}</span>${h[1]?`<small>${h[1]}</small>`:''}${h[2]?`<small class="price">${h[2]}</small>`:''}`;grid.append(d)});
+ const serviceWidth=174,clientWidth=112;
+ grid.style.gridTemplateColumns=`${serviceWidth}px repeat(${state.rows.length},${clientWidth}px)`;
+ const corner=document.createElement('div');corner.className='cell head corner';corner.innerHTML='<strong>服務項目</strong><small>代號・名稱・單價</small>';grid.append(corner);
  state.rows.forEach((r,ri)=>{
-  const no=document.createElement('div');no.className='cell sticky-no';no.textContent=ri+1;grid.append(no);
-  const nc=document.createElement('div');nc.className='cell sticky-name';const ni=document.createElement('input');ni.className='name-input';ni.placeholder='輸入姓名';ni.value=r.name;ni.addEventListener('input',e=>{r.name=e.target.value;save();updateTotals()});nc.append(ni);grid.append(nc);
-  services.forEach((s,si)=>{const c=document.createElement('div');c.className='cell';const q=document.createElement('input');q.className='qty';q.type='number';q.min=0;q.step=1;q.inputMode='numeric';q.placeholder='0';q.value=r.q[si]||'';q.setAttribute('aria-label',`${r.name||'個案'+(ri+1)} ${s[0]}次數`);q.addEventListener('input',e=>{r.q[si]=Math.max(0,Number(e.target.value)||0);save();updateRow(ri)});c.append(q);grid.append(c)});
-  ['amount','income'].forEach(type=>{const c=document.createElement('div');c.className='cell money '+(type==='income'?'income':'');c.dataset[`${type}${ri}`]='';grid.append(c)});
-  const dc=document.createElement('div');dc.className='cell';const db=document.createElement('button');db.className='delete';db.innerHTML='×';db.title='刪除此個案';db.onclick=()=>{if(state.rows.length===1){state.rows[0]={name:'',q:Array(services.length).fill(0)}}else state.rows.splice(ri,1);save();render()};dc.append(db);grid.append(dc);
- }); updateTotals();
+  const h=document.createElement('div');h.className='cell head';
+  const ni=document.createElement('input');ni.className='name-input';ni.placeholder=`個案 ${ri+1}`;ni.value=r.name;ni.addEventListener('input',e=>{r.name=e.target.value;save();updateTotals()});h.append(ni);
+  const sums=document.createElement('div');sums.className='client-sums';sums.innerHTML=`申報 <b data-mobile-amount${ri}></b>所得 <b class="income" data-mobile-income${ri}></b>`;h.append(sums);
+  const db=document.createElement('button');db.className='delete';db.textContent='刪除此個案';db.onclick=()=>{if(state.rows.length===1){state.rows[0]={name:'',q:Array(services.length).fill(0)}}else state.rows.splice(ri,1);save();render()};h.append(db);grid.append(h);
+ });
+ services.forEach((s,si)=>{
+  const label=document.createElement('div');label.className='cell service-cell';label.innerHTML=`<div class="service-info"><span class="service-code">${s[0]}</span><span class="service-name">${s[1]}</span><span class="service-price">${s[2]}元</span></div>`;grid.append(label);
+  state.rows.forEach((r,ri)=>{const c=document.createElement('div');c.className='cell';const q=document.createElement('input');q.className='qty';q.type='number';q.min=0;q.step=1;q.inputMode='numeric';q.placeholder='0';q.value=r.q[si]||'';q.setAttribute('aria-label',`${r.name||'個案'+(ri+1)} ${s[0]}次數`);q.addEventListener('input',e=>{r.q[si]=Math.max(0,Number(e.target.value)||0);save();updateTotals()});c.append(q);grid.append(c)});
+ });
+ updateTotals();
 }
-function updateRow(i){const a=calc(state.rows[i]),ratio=Number(state.ratio)||0;document.querySelector(`[data-amount${i}]`).textContent=money(a);document.querySelector(`[data-income${i}]`).textContent=money(a*ratio/100);updateTotals(false)}
-function updateTotals(rows=true){let amount=0,qty=0;state.rows.forEach((r,i)=>{amount+=calc(r);qty+=r.q.reduce((a,b)=>a+b,0);if(rows){const ac=document.querySelector(`[data-amount${i}]`),ic=document.querySelector(`[data-income${i}]`);if(ac)ac.textContent=money(calc(r));if(ic)ic.textContent=money(calc(r)*(Number(state.ratio)||0)/100)}});document.querySelector('#caseTotal').textContent=`${state.rows.filter(r=>r.name.trim()||r.q.some(Boolean)).length} 位`;document.querySelector('#qtyTotal').textContent=qty.toLocaleString('zh-TW');document.querySelector('#amountTotal').textContent=money(amount);document.querySelector('#incomeTotal').textContent=money(amount*(Number(state.ratio)||0)/100)}
+function renderDesktop(){
+ grid.innerHTML='';grid.style.gridTemplateColumns=`48px 160px repeat(${services.length},126px) 118px 118px 56px`;
+ const heads=[['#','',''],['個案姓名','',''],...services.map(s=>[s[0],s[1],`${s[2]}元`]),['申報金額','',''],['拆帳所得','',''],['','','']];
+ heads.forEach((h,i)=>{const d=document.createElement('div');d.className='cell head desktop-head'+(i===0?' desktop-sticky-no':i===1?' desktop-sticky-name':'');d.innerHTML=`<span>${h[0]}</span>${h[1]?`<small>${h[1]}</small>`:''}${h[2]?`<small class="price">${h[2]}</small>`:''}`;grid.append(d)});
+ state.rows.forEach((r,ri)=>{
+  const no=document.createElement('div');no.className='cell desktop-sticky-no';no.textContent=ri+1;grid.append(no);
+  const nc=document.createElement('div');nc.className='cell desktop-sticky-name';const ni=document.createElement('input');ni.className='name-input';ni.placeholder='輸入姓名';ni.value=r.name;ni.addEventListener('input',e=>{r.name=e.target.value;save();updateTotals()});nc.append(ni);grid.append(nc);
+  services.forEach((s,si)=>{const c=document.createElement('div');c.className='cell';const q=document.createElement('input');q.className='qty';q.type='number';q.min=0;q.step=1;q.inputMode='numeric';q.placeholder='0';q.value=r.q[si]||'';q.setAttribute('aria-label',`${r.name||'個案'+(ri+1)} ${s[0]}次數`);q.addEventListener('input',e=>{r.q[si]=Math.max(0,Number(e.target.value)||0);save();updateTotals()});c.append(q);grid.append(c)});
+  ['amount','income'].forEach(type=>{const c=document.createElement('div');c.className='cell money '+(type==='income'?'income':'');c.dataset[`${type}${ri}`]='';grid.append(c)});
+  const dc=document.createElement('div');dc.className='cell';const db=document.createElement('button');db.className='delete';db.textContent='×';db.title='刪除此個案';db.onclick=()=>{if(state.rows.length===1){state.rows[0]={name:'',q:Array(services.length).fill(0)}}else state.rows.splice(ri,1);save();render()};dc.append(db);grid.append(dc);
+ });updateTotals();
+}
+function render(){isPhonePortrait()?renderMobile():renderDesktop()}
+function updateTotals(){let amount=0,qty=0;state.rows.forEach((r,i)=>{const a=calc(r);amount+=a;qty+=r.q.reduce((x,y)=>x+y,0);['amount','mobile-amount'].forEach(k=>{const el=document.querySelector(`[data-${k}${i}]`);if(el)el.textContent=money(a)});['income','mobile-income'].forEach(k=>{const el=document.querySelector(`[data-${k}${i}]`);if(el)el.textContent=money(a*(Number(state.ratio)||0)/100)})});document.querySelector('#caseTotal').textContent=`${state.rows.filter(r=>r.name.trim()||r.q.some(Boolean)).length} 位`;document.querySelector('#qtyTotal').textContent=qty.toLocaleString('zh-TW');document.querySelector('#amountTotal').textContent=money(amount);document.querySelector('#incomeTotal').textContent=money(amount*(Number(state.ratio)||0)/100)}
 document.querySelector('#ratio').value=state.ratio;document.querySelector('#ratio').addEventListener('input',e=>{state.ratio=Math.min(100,Math.max(0,Number(e.target.value)||0));save();updateTotals()});
-document.querySelector('#add').onclick=()=>{state.rows.push({name:'',q:Array(services.length).fill(0)});save();render();setTimeout(()=>{const s=document.querySelector('.scroller');s.scrollTop=s.scrollHeight},0)};
+document.querySelector('#add').onclick=()=>{state.rows.push({name:'',q:Array(services.length).fill(0)});save();render();setTimeout(()=>{const s=document.querySelector('.scroller');if(isPhonePortrait())s.scrollLeft=s.scrollWidth;else s.scrollTop=s.scrollHeight},0)};
 const clearButton=document.querySelector('#clear');
 let clearTimer=null;
 clearButton.addEventListener('click',()=>{
@@ -91,6 +110,7 @@ clearButton.addEventListener('click',()=>{
  clearButton.classList.remove('confirming');
 });
 render();
+let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(render,180)});
 </script>
 </body>
 </html>
