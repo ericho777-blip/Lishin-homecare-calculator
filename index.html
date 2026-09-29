@@ -128,7 +128,7 @@ for(let m=1;m<=12;m++){const o=document.createElement('option');o.value=String(m
 monthInput.value=String(today.getMonth()+1).padStart(2,'0');
 function selectedKey(){const y=Number(yearInput.value),m=Number(monthInput.value);return Number.isInteger(y)&&y>=1&&y<=999&&m>=1&&m<=12?String(y).padStart(3,'0')+String(m).padStart(2,'0'):null}
 function readArchive(){try{const v=JSON.parse(localStorage.getItem(archiveKey)||'{}');return v&&typeof v==='object'&&!Array.isArray(v)?v:{}}catch(e){return {}}}
-function refreshArchive(){const current=savedSelect.value;const data=readArchive();savedSelect.replaceChildren(new Option('已存月份',''));Object.keys(data).filter(k=>/^\\d{5}$/.test(k)).sort().reverse().forEach(k=>savedSelect.add(new Option(Number(k.slice(0,3))+'年'+Number(k.slice(3))+'月',k)));if(data[current])savedSelect.value=current}
+function refreshArchive(){const current=savedSelect.value;const data=readArchive();savedSelect.replaceChildren(new Option('已存月份',''));Object.keys(data).filter(k=>/^\d{5}$/.test(k)).sort().reverse().forEach(k=>savedSelect.add(new Option(Number(k.slice(0,3))+'年'+Number(k.slice(3))+'月',k)));if(data[current])savedSelect.value=current}
 function status(message){archiveStatus.textContent=message}
 document.querySelector('#saveMonth').addEventListener('click',()=>{
  const key=selectedKey();if(!key){status('請輸入正確的民國年月。');return}
