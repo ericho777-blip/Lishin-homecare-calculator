@@ -51,7 +51,7 @@ try{state=JSON.parse(localStorage.getItem('lihsin-split-v1')||'null')}catch(e){s
 state=state||{ratio:60,rows:[{name:'',q:Array(services.length).fill(0)}]};
 if(!Array.isArray(state.rows)||!state.rows.length)state.rows=[{name:'',q:Array(services.length).fill(0)}];
 state.rows.forEach(r=>{r.q=Array.from({length:services.length},(_,i)=>Number(r.q?.[i])||0)});
-const money=n=>'
+const money=n=>'$'+Math.round(n).toLocaleString('zh-TW');
 function save(){try{localStorage.setItem('lihsin-split-v1',JSON.stringify(state))}catch(e){}}
 function calc(r){return r.q.reduce((s,n,i)=>s+n*services[i][2],0)}
 const isPhonePortrait=()=>window.matchMedia('(max-width:720px)').matches;
